@@ -60,6 +60,9 @@
 					<encoding>UTF-8</encoding>
 					<debug>true</debug>
 					<optimize>false</optimize>
+					<compilerArgs>
+							<arg>-XX:MaxPermSize=256m</arg>
+					</compilerArgs>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -232,11 +235,6 @@
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>jdepend-maven-plugin</artifactId>
 				<version>2.0-beta-2</version>
-			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>javancss-maven-plugin</artifactId>
-				<version>2.0</version>
 			</plugin>
 		</plugins>
 	</reporting>
