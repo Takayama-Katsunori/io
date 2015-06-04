@@ -123,7 +123,6 @@
 					<excludes>
 						<exclude>.checkstyle</exclude>
 						<exclude>checkstyle.header</exclude>
-						<exclude>checkstyle_maven.properties</exclude>
 						<exclude>checkstyle-suppressions.xml</exclude>
 						<exclude>dc-checks.xml</exclude>
 						<exclude>findbugs-exclude.xml</exclude>
@@ -192,7 +191,7 @@
 				<configuration>
 					<encoding>UTF-8</encoding>
 					<configLocation>dc-checks.xml</configLocation>
-					<propertiesLocation>checkstyle_maven.properties</propertiesLocation>
+					<propertyExpansion>project_loc=${basedir}</propertyExpansion>
 				</configuration>
 				<reportSets>
 					<reportSet>
