@@ -1,5 +1,6 @@
 personium.io
 ====
+[![Circle CI](https://circleci.com/gh/yuukaotake/io.svg?style=shield)](https://circleci.com/gh/yuukaotake/io)
 
 An interconnectable open source BaaS(Backend as a Service) / PDS (Personal Data Store) server.
 
