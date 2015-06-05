@@ -6,4 +6,18 @@ machine:
 
 test:
   override:
-    - mvn clean site
+    # es-api
+    - mvn clean site -f es-api/pom.xml
+    - mvn install
+
+    # common
+    - mvn clean site -f common/pom.xml
+    - mvn install
+
+    # logback
+    - mvn clean site -f logback/pom.xml
+    - mvn install
+
+    # core
+    - mvn clean site -f core/pom.xml
+
