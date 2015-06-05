@@ -2026,7 +2026,8 @@ public class BarFileReadRunner implements Runnable {
                 parentCmp,
                 parentCell,
                 parentBox,
-                collectionId);
+                collectionId,
+                davNode);
         this.davCmpMap.put(entryName, collectionCmp);
 
         // ACL登録
