@@ -11,7 +11,7 @@ dependencies:
 
 test:
   override:
-    - mvn site -B -Ddependency.locations.enabled=false
+    - mvn test -B -Ddependency.locations.enabled=false
 #    # es-api
 #    - mvn clean site -B -pl es-api -Ddependency.locations.enabled=false 
 #
