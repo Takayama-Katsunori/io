@@ -10,4 +10,4 @@ dependencies:
 
 test:
   override:
-    - mvn test -B  -pl common,logback,core -Ddependency.locations.enabled=false
+    - mvn test -B  -pl logback,core -Ddependency.locations.enabled=false
