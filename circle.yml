@@ -11,7 +11,7 @@ dependencies:
 test:
   override:
     # es-api
-    - pushd es-api; mvn clean site  -Dmaven.test.skip=true -Ddependency.locations.enabled=false; mvn install  -Dmaven.test.skip=true; popd
+    - mvn clean site -B -pl dc1-es-api -Dmaven.test.skip=true -Ddependency.locations.enabled=false 
 
 #    # common
 #    - pushd common
