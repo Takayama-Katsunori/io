@@ -10,4 +10,5 @@ dependencies:
 
 test:
   override:
-    - mvn test -B  -pl logback,core -Ddependency.locations.enabled=false
+    - mvn test -B -pl core -Dtest=com.fujitsu.dc.test.setup.Setup#reset
+    - mvn site -B -pl logback,core -Ddependency.locations.enabled=false
