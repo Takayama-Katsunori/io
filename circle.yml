@@ -7,17 +7,25 @@ machine:
 test:
   override:
     # es-api
-    - mvn clean site -f es-api/pom.xml
+    - pushd es-api
+    - mvn clean site
     - mvn install
+    - popd
 
     # common
-    - mvn clean site -f common/pom.xml
+    - pushd common
+    - mvn clean site
     - mvn install
+    - popd
 
     # logback
-    - mvn clean site -f logback/pom.xml
+    - pushd logback
+    - mvn clean site
     - mvn install
+    - popd
 
     # core
-    - mvn clean site -f core/pom.xml
+    - pushd core
+    - mvn clean site
+    - popd
 
