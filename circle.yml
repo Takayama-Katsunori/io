@@ -4,6 +4,10 @@ machine:
   environment:
     MAVEN_OPTS: -Xmx512m -XX:MaxPermSize=128m
 
+dependencies:
+  override:
+    - echo "skip mvn dependencies."
+
 test:
   override:
     # es-api
