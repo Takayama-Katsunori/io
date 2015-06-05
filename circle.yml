@@ -12,24 +12,24 @@ test:
   override:
     # es-api
     - pushd es-api
-    - mvn clean site
-    - mvn install
+    - mvn clean site  -Dmaven.test.skip=true -Ddependency.locations.enabled=false
+    - mvn install  -Dmaven.test.skip=true
     - popd
 
-    # common
-    - pushd common
-    - mvn clean site
-    - mvn install
-    - popd
-
-    # logback
-    - pushd logback
-    - mvn clean site
-    - mvn install
-    - popd
-
-    # core
-    - pushd core
-    - mvn clean site
-    - popd
+#    # common
+#    - pushd common
+#    - mvn clean site
+#    - mvn install
+#    - popd
+#
+#    # logback
+#    - pushd logback
+#    - mvn clean site
+#    - mvn install
+#    - popd
+#
+#    # core
+#    - pushd core
+#    - mvn clean site
+#    - popd
 
