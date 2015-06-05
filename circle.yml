@@ -6,13 +6,15 @@ machine:
 
 dependencies:
   override:
-    - echo "skip mvn dependencies."
+#    - echo "skip mvn dependencies."
+    - mvn install -B -pl es-api,common,logback -Dmaven.test.skip=true
 
 test:
   override:
-    # es-api
-    - mvn clean site -B -pl es-api -Ddependency.locations.enabled=false 
-
+    - mvn site -B -Ddependency.locations.enabled=false
+#    # es-api
+#    - mvn clean site -B -pl es-api -Ddependency.locations.enabled=false 
+#
 #    # common
 #    - pushd common
 #    - mvn clean site
