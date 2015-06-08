@@ -34,7 +34,7 @@ test:
     - mvn test -B -pl core -Dtest=com.fujitsu.dc.test.setup.Setup#reset
     - mvn test -B -pl core -Dtest=com.fujitsu.dc.test.setup.Setup#resetEventLog > artifacts/log/core-resetEventLog.log
     - mvn site -B -pl core -Ddependency.locations.enabled=false > artifacts/log/core-site.log:
-        timeout: 720
+        timeout: 7200
 
   post:
     - find . -maxdepth 1 -type d ! -name "." ! -name 'artifacts' -exec cp -pr {}/target/site artifacts/{} \;
