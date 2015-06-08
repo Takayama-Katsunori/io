@@ -13,9 +13,8 @@ test:
     - sudo mkdir -p /fjnfs/dc-core/{dav,eventlog,barInstall}
     - sudo chown -R ubuntu.ubuntu /fjnfs
     - sudo mkdir -p /fj/logback/log/
-    - sudo mkdir -p /fj/dc-core/conf/
     - sudo chown -R ubuntu.ubuntu /fj
-    - cp -p core/src/test/resources/dc-config.properties.ci /fj/dc-core/conf/dc-config.properties
+    - cp -p core/src/test/resources/dc-config.properties.ci core/src/test/resources/dc-config.properties
 
   override:
     - mvn test -B -pl core -Dtest=com.fujitsu.dc.test.setup.Setup#reset
