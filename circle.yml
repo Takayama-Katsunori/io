@@ -2,7 +2,7 @@ machine:
   timezone:
     Asia/Tokyo
   environment:
-    MAVEN_OPTS: -Xmx512m -XX:MaxPermSize=128m
+    MAVEN_OPTS: -Xmx1024m -XX:MaxPermSize=512m
 
 dependencies:
   override:
@@ -31,8 +31,8 @@ test:
 
   override:
     - mvn test -B -pl core -Dtest=com.fujitsu.dc.test.setup.Setup#reset
-    - mvn test -B -pl core -Dtest=com.fujitsu.dc.test.setup.Setup#resetEventLog
-    - mvn site -B -pl core -Ddependency.locations.enabled=false
+    - mvn test -B -pl core -Dtest=com.fujitsu.dc.test.setup.Setup#resetEventLog > artifacts/core-resetEventLog.log
+    - mvn site -B -pl core -Ddependency.locations.enabled=false > artifacts/core-site.log
 
   post:
     - for i in `ls -1 --ignore='artifacts' .`; do echo $i; cp -pr $i/target artifacts/$i ; done
