@@ -12,9 +12,9 @@ dependencies:
     # elasticsearch
     - wget https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.3.4.tar.gz
     - tar -xvf elasticsearch-1.3.4.tar.gz
-    - echo 'action.auto_create_index: false' | sudo sh -c 'cat >>  elasticsearch-1.3.4/conf/elasticsearch.yml'
-    - echo 'index.refresh_interval : -1' | sudo sh -c 'cat >>  elasticsearch-1.3.4/conf/elasticsearch.yml'
-    - echo 'script.disable_dynamic: false' | sudo sh -c 'cat >>  elasticsearch-1.3.4/conf/elasticsearch.yml'
+    - echo 'action.auto_create_index: false' >>  elasticsearch-1.3.4/conf/elasticsearch.yml
+    - echo 'index.refresh_interval : -1' >>  elasticsearch-1.3.4/conf/elasticsearch.yml
+    - echo 'script.disable_dynamic: false' >>  elasticsearch-1.3.4/conf/elasticsearch.yml
     - elasticsearch-1.3.4/bin/elasticsearch: {background: true}
     # MySQL
     - sudo apt-add-repository -y 'deb http://ppa.launchpad.net/ondrej/mysql-experimental/ubuntu precise main'
