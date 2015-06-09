@@ -2,7 +2,7 @@ machine:
   timezone:
     Asia/Tokyo
   environment:
-    MAVEN_OPTS: -Xms256m -Xmx2048m -XX:MaxPermSize=512m -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps
+    MAVEN_OPTS: -Xms256m -Xmx2048m -XX:MaxPermSize=1024m -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Xloggc:artifacts/gc.log -XX:-UseGCOverheadLimit
 
 dependencies:
   override:
@@ -44,9 +44,9 @@ test:
 #     - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/common/ \;
 
 #deployment:
+# pre:
+#   - cp -p core/src/test/resources/ci/settings.xml /home/ubuntu/.m2/apache-maven-3.2.5/conf/settings.xml
 #  master:
-#    branch: master
-#    owner: circleci
 #    commands:
 #      - mvn deploy
 
