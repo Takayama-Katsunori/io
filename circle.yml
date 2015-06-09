@@ -22,24 +22,25 @@ dependencies:
 
 test:
   pre:
+    # clean the artifacts dir from the previous build
     - rm -rf artifacts && mkdir -p artifacts/log
+    # create directory
     - sudo mkdir -p /fjnfs/dc-core/{dav,eventlog,barInstall}
     - sudo chown -R ubuntu.ubuntu /fjnfs
     - sudo mkdir -p /fj/logback/log/
     - sudo chown -R ubuntu.ubuntu /fj
     - cp -p core/src/test/resources/ci/dc-config.properties core/src/test/resources/dc-config.properties
+    # regist data for test
+    - mvn test -B -pl core -Dtest=com.fujitsu.dc.test.setup.Setup#reset > artifacts/log/core-reset.log
+    - mvn test -B -pl core -Dtest=com.fujitsu.dc.test.setup.Setup#resetEventLog > artifacts/log/core-resetEventLog.log
 
   override:
     # - mvn site -B -pl common -Ddependency.locations.enabled=false > artifacts/log/common-site.log
-    - mvn test -B -pl core -Dtest=com.fujitsu.dc.test.setup.Setup#reset > artifacts/log/core-reset.log
-    - mvn test -B -pl core -Dtest=com.fujitsu.dc.test.setup.Setup#resetEventLog > artifacts/log/core-resetEventLog.log
     - mvn site -B -pl core -Ddependency.locations.enabled=false > artifacts/log/core-site.log:
-    # - mvn site -B -pl core -Ddependency.locations.enabled=false -Dtest=com.fujitsu.dc.test.jersey.box.odatacol.UserDataCreateTest > artifacts/log/core-site.log:
         timeout: 7200
 
   post:
     - find . -maxdepth 1 -type d ! -name "." ! -name 'artifacts' -exec cp -pr {}/target/site artifacts/{} \;
-
     # - mkdir -p $CIRCLE_TEST_REPORTS/junit/common
     # - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/common/ \;
 
