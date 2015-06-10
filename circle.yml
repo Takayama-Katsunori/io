@@ -2,7 +2,7 @@ machine:
   timezone:
     Asia/Tokyo
   environment:
-    MAVEN_OPTS: -Xms1024m -Xmx1024m -XX:MaxPermSize=256m
+    MAVEN_OPTS: -Xmx1024M -Xss128M -XX:MaxPermSize=1024M -XX:+CMSClassUnloadingEnabled
 
 dependencies:
   override:
