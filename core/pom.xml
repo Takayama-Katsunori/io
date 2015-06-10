@@ -18,7 +18,7 @@
 		<final.name>dc1-core</final.name>
 				<esapi.version>1_2</esapi.version>
 				<java.version>1.7</java.version>
-				<jvm.option> -Xms512m -Xmx2048m -XX:MetaspaceSize=256m -XX:MaxMetaspaceSize=256m -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Xloggc:artifacts/gc.log -XX:+CMSClassUnloadingEnabled -XX:-UseSplitVerifier -DfailIfNoTests=false</jvm.option>
+				<jvm.option> -Xms512m -Xmx2048m -XX:PermSize=512m -XX:MaxPermSize=512m -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Xloggc:artifacts/gc.log -XX:+CMSClassUnloadingEnabled -XX:-UseSplitVerifier -DfailIfNoTests=false</jvm.option>
 				<logback.version>1.0.12</logback.version>
 				<slf4j.version>1.7.4</slf4j.version>
 			</properties>
