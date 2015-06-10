@@ -2,7 +2,7 @@ machine:
   timezone:
     Asia/Tokyo
   environment:
-    MAVEN_OPTS: -Xms256m -Xmx1024m -XX:MaxPermSize=1024m -XX:MaxPermSize=1024m -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Xloggc:artifacts/gc.log -XX:+CMSClassUnloadingEnabled
+    MAVEN_OPTS: -Xms256m -Xmx1024m -XX:PermSize=1024m -XX:MaxPermSize=1024m -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Xloggc:artifacts/gc.log -XX:+CMSClassUnloadingEnabled
 
 dependencies:
   override:
