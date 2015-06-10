@@ -2,7 +2,7 @@ machine:
   timezone:
     Asia/Tokyo
   environment:
-    MAVEN_OPTS: -Xms512m -Xmx2048m -XX:MetaspaceSize=256m -XX:MaxMetaspaceSize=256m -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Xloggc:artifacts/gc.log -XX:+CMSClassUnloadingEnabled
+    MAVEN_OPTS: -Xms512m -Xmx2048m -XX:MetaspaceSize=256m -XX:MaxMetaspaceSize=256m -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Xloggc:artifacts/gc.log -XX:+CMSClassUnloadingEnabled -XX:-UseSplitVerifier
   java:
     version:
       oraclejdk8
