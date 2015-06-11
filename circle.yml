@@ -29,7 +29,8 @@ test:
     - rm -rf artifacts && mkdir -p artifacts/log
     - sudo mkdir -p /fjnfs/dc-core/{dav,eventlog,barInstall}
     - sudo chown -R ubuntu.ubuntu /fjnfs
-    - sudo mkdir -p /fj/logback/log/
+    - sudo mkdir -p /fj/logback/log/ /fj/dc-core/ads
+    - sudo touch /fj/dc-core/invokeRepair
     - sudo chown -R ubuntu.ubuntu /fj
     - cp -p core/src/test/resources/ci/dc-config.properties core/src/test/resources/dc-config.properties
 
