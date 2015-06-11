@@ -39,7 +39,7 @@ test:
 #     - mvn site -B -pl common -Ddependency.locations.enabled=false > artifacts/log/common-site.log
     - mvn test -B -pl core -Dtest=com.fujitsu.dc.test.setup.Setup#reset > artifacts/log/core-reset.log
     - mvn test -B -pl core -Dtest=com.fujitsu.dc.test.setup.Setup#resetEventLog > artifacts/log/core-resetEventLog.log
-    - COVERALLS_REPO_TOKEN=7RxQao3unx7uYWWOMLzAr3sZMWi6JR9WB mvn site -B -pl core -Ddependency.locations.enabled=false > artifacts/log/core-site.log:
+    - mvn site -B -pl core -Ddependency.locations.enabled=false > artifacts/log/core-site.log:
 #  - mvn site -B -pl core -Ddependency.locations.enabled=false -Dtest=com.fujitsu.dc.test.jersey.box.odatacol.UserDataCreateTest > artifacts/log/core-site.log:
         timeout: 7200
 
