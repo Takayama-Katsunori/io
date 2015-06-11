@@ -3,6 +3,7 @@ machine:
     Asia/Tokyo
   environment:
     MAVEN_OPTS: -Xms256m -Xmx2048m -XX:PermSize=512m -XX:MaxPermSize=512m -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Xloggc:artifacts/gc.log -XX:+CMSClassUnloadingEnabled -XX:-UseSplitVerifier
+    COVERALLS_REPO_TOKEN=7RxQao3unx7uYWWOMLzAr3sZMWi6JR9WB
   java:
     version:
       oraclejdk7
@@ -31,7 +32,7 @@ test:
     - sudo chown -R ubuntu.ubuntu /fjnfs
     - sudo mkdir -p /fj/logback/log/ /fj/dc-core/ads
     - sudo touch /fj/dc-core/invokeRepair
-    - sudo touch hoge
+    - sudo touch io/core/hoge
     - sudo chown -R ubuntu.ubuntu /fj
     - cp -p core/src/test/resources/ci/dc-config.properties core/src/test/resources/dc-config.properties
 
