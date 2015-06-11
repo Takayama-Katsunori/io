@@ -44,9 +44,8 @@ test:
 
   post:
     - find . -maxdepth 1 -type d ! -name "." ! -name 'artifacts' -exec cp -pr {}/target/site artifacts/{} \;
-
-#     - mkdir -p $CIRCLE_TEST_REPORTS/junit/common
-#     - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/common/ \;
+    - mkdir -p $CIRCLE_TEST_REPORTS/junit/common
+    - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/common/ \;
 
 #deployment:
 # pre:
