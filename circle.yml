@@ -31,6 +31,7 @@ test:
     - sudo chown -R ubuntu.ubuntu /fjnfs
     - sudo mkdir -p /fj/logback/log/ /fj/dc-core/ads
     - sudo touch /fj/dc-core/invokeRepair
+    - sudo touch hoge
     - sudo chown -R ubuntu.ubuntu /fj
     - cp -p core/src/test/resources/ci/dc-config.properties core/src/test/resources/dc-config.properties
 
@@ -44,8 +45,8 @@ test:
 
   post:
     - find . -maxdepth 1 -type d ! -name "." ! -name 'artifacts' -exec cp -pr {}/target/site artifacts/{} \;
-    - mkdir -p $CIRCLE_TEST_REPORTS/junit/common
-    - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/common/ \;
+    - mkdir -p $CIRCLE_TEST_REPORTS/junit
+    - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
 
 #deployment:
 # pre:
