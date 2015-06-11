@@ -1,6 +1,6 @@
 personium.io
 ====
-[![Circle CI](https://circleci.com/gh/M-Tajima/io.svg?style=shield)](https://circleci.com/gh/M-Tajima/io)
+[![Circle CI](https://circleci.com/gh/Takayama-Katsunori/io.svg?style=shield)](https://circleci.com/gh/Takayama-Katsunori/io) [![Coverage Status](https://coveralls.io/repos/Takayama-Katsunori/gulp-personium/badge.svg?branch=master)](https://coveralls.io/r/Takayama-Katsunori/gulp-personium?branch=master)
 
 An interconnectable open source BaaS(Backend as a Service) / PDS (Personal Data Store) server.
 
