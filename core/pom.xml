@@ -305,12 +305,40 @@
 					</descriptors>
 				</configuration>
 			</plugin>
+
+<plugin>
+    <groupId>org.jacoco</groupId>
+    <artifactId>jacoco-maven-plugin</artifactId>
+    <version>0.7.5.201505241946</version>
+    <executions>
+        <execution>
+            <id>prepare-agent</id>
+            <phase>test-compile</phase>
+            <goals>
+                <goal>prepare-agent</goal>
+            </goals>
+        </execution>
+    </executions>
+    <configuration>
+      <propertyName>jacocoArgs</propertyName>
+      <append>true</append>
+    </configuration>
+  </plugin>
+<plugin>
+    <groupId>org.eluder.coveralls</groupId>
+    <artifactId>coveralls-maven-plugin</artifactId>
+    <version>3.1.0</version>
+    <configuration>
+        <repoToken>7RxQao3unx7uYWWOMLzAr3sZMWi6JR9WB</repoToken>
+    </configuration>
+</plugin>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.8.1</version>
 				<configuration>
-					<argLine>${jvm.option}</argLine>
+					<argLine>${jvm.option} ${jacocoArgs}</argLine>
 					<excludes>
 <!--
 						<exclude>**/jersey/box/ServiceRelayTest.java</exclude>
@@ -394,27 +422,6 @@
 					</excludes>
 				</configuration>
 			</plugin>
-<plugin>
-    <groupId>org.jacoco</groupId>
-    <artifactId>jacoco-maven-plugin</artifactId>
-    <version>0.7.5.201505241946</version>
-    <executions>
-        <execution>
-            <id>prepare-agent</id>
-            <goals>
-                <goal>prepare-agent</goal>
-            </goals>
-        </execution>
-    </executions>
-</plugin>
-<plugin>
-    <groupId>org.eluder.coveralls</groupId>
-    <artifactId>coveralls-maven-plugin</artifactId>
-    <version>3.1.0</version>
-    <configuration>
-        <repoToken>7RxQao3unx7uYWWOMLzAr3sZMWi6JR9WB</repoToken>
-    </configuration>
-</plugin>
 		</plugins>
 	</build>
 	<reporting>
