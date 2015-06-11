@@ -32,7 +32,7 @@ test:
     - sudo chown -R ubuntu.ubuntu /fjnfs
     - sudo mkdir -p /fj/logback/log/ /fj/dc-core/ads
     - sudo touch /fj/dc-core/invokeRepair
-    - sudo touch io/core/hoge
+    - sudo touch core/hoge
     - sudo chown -R ubuntu.ubuntu /fj
     - cp -p core/src/test/resources/ci/dc-config.properties core/src/test/resources/dc-config.properties
 
