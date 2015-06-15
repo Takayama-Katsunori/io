@@ -26,6 +26,7 @@ import javax.xml.crypto.KeySelectorException;
 import javax.xml.crypto.dsig.XMLSignatureException;
 
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.fujitsu.dc.common.auth.token.AbstractOAuth2Token.TokenDsigException;
@@ -39,6 +40,7 @@ import static org.junit.Assert.fail;
 /**
  * x509証明書処理ライブラリのユニットテストクラス.
  */
+@Ignore
 public class X509KeySelecterTest {
 
     private static String x509Root = "x509/";
